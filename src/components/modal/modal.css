@@ -1,0 +1,54 @@
+.modal {
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: black;
+  opacity: 0;
+  overflow: hidden;
+  z-index: 99;
+  visibility: hidden;
+}
+.modal.open {
+  overflow: visible;
+  opacity: .7;
+  visibility: visible;
+}
+.modal-box {
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  opacity: 0;
+  overflow: hidden;
+  z-index: 99;
+  visibility: hidden;
+}
+.modal-box.open {
+  overflow: visible;
+  opacity: 1;
+  visibility: visible;
+}
+.modal-body {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  background: white;
+  overflow: hidden;
+  visibility: hidden;
+  z-index: 100;
+  opacity: 0;
+}
+.modal-body.open {
+  opacity: 1;
+  overflow: visible;
+  visibility: visible;
+  transition: ease 2s;
+}

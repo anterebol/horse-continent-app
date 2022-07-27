@@ -1,0 +1,21 @@
+.header-link {
+  margin: auto 0;
+  text-decoration: none;
+};
+.header-link:active {
+  color: red;
+};
+.header-link:hover {
+  transform: scale(1.3);
+};
+.hover {
+  color: red !important;
+}
+
+.icon-horse:hover {
+  transform: scale(1.3);
+  transition: ease-in 1s;
+}
+.icon-horse {
+  transition: ease-in 1s;
+}

@@ -1,0 +1,21 @@
+.footer {
+  background: -webkit-linear-gradient(top, white, orange);
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+};
+
+.icon-horse:hover {
+  transform: scale(1.3);
+  transition: ease-in 1s;
+}
+.icon-horse.active {
+  /* transform: scale(1.4); */
+}
+
+@media (max-width: 1920px) and (min-width: 1105px) {
+  .footer {
+    position: relative;
+  }
+}

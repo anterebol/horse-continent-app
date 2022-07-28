@@ -10,9 +10,11 @@ export const iconBox = {
   height: 40,
 };
 export const footerLink = {
-  color: 'black',
+  color: 'white',
   margin: 'auto 0',
   textDecoration: 'none',
+  // color: 'white',
+  fontSize: 24,
 };
 
 // @media (ma)

@@ -2,3 +2,14 @@
   margin: 0;
   padding: 0;
 }
+body::-webkit-scrollbar {
+  width: 12px;               /* ширина scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background: white;        /* цвет дорожки */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: orange;    /* цвет плашки */
+  border-radius: 20px;       /* закругления плашки */
+  border: 1px solid rgb(233, 212, 172);;  
+}

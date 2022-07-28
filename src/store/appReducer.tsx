@@ -3,6 +3,8 @@ const initialState = {
   something: true,
   modal: false,
   load: true,
+  modalType: '',
+  image: 0,
 };
 
 const appSlice = createSlice({
@@ -16,14 +18,16 @@ const appSlice = createSlice({
       state.modal = !state.modal;
     },
     loadPage: (state) => {
-      state.load = true;
-      // setTimeout(() => (state.load = true), 1000);
+      if (!state.load) state.load = true;
     },
     loadedPage: (state) => {
-      state.load = false;
-      // setTimeout(() => (state.load = false), 1000);
+      if (state.load) state.load = false;
+    },
+    chengeModal: (state, action) => {
+      state.modalType = action.payload.modalType;
+      state.image = action.payload.image;
     },
   },
 });
 export default appSlice.reducer;
-export const { firstReducer, openModal, loadPage, loadedPage } = appSlice.actions;
+export const { firstReducer, openModal, loadPage, loadedPage, chengeModal } = appSlice.actions;

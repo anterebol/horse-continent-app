@@ -1,7 +1,7 @@
 import { boxFooterInf, footerLink } from './footerCss';
 import { NavLink } from 'react-router-dom';
 import { Box } from '@mui/system';
-import horseImg from '../../assets/horse.svg';
+import horseImg from '../../assets/horse-white.svg';
 import { Avatar } from '@mui/material';
 import './footer.css';
 

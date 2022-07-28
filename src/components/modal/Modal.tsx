@@ -3,22 +3,9 @@ import { openModal } from '../../store/appReducer';
 import './modal.css';
 import { Contacts } from '../contacts/contacts';
 import CloseIcon from '@mui/icons-material/Close';
+import { GalleryModal } from '../galleryModal/GalleryModal';
 
-const modalStyle = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  maxWidth: 500,
-  width: '100%',
-  bgcolor: 'background.paper',
-  borderRadius: '10px',
-  boxShadow: 24,
-  p: 2.5,
-  overflow: 'hidden',
-};
-
-export const Modal = () => {
+export const Modal = (props: { modalType: string }) => {
   const dispatch = useAppDispatch();
   const { modal } = useAppSelector((state) => state.appReducer);
   return (
@@ -26,22 +13,21 @@ export const Modal = () => {
       <div className={['modal', modal ? 'open' : ''].join(' ')}></div>
       <div
         className={['modal-box', modal ? 'open' : ''].join(' ')}
-        onClick={() => dispatch(openModal())}
+        onClick={(e) => {
+          dispatch(openModal());
+        }}
       >
-        <div className={['modal-body', modal ? 'open' : ''].join(' ')}>
-          <button
-            style={{
-              position: 'absolute',
-              top: 10,
-              right: 10,
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-            }}
-          >
-            <CloseIcon />
-          </button>
-          <Contacts />
+        <div
+          className={['modal-body', modal ? 'open' : '', props.modalType].join(' ')}
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+        >
+          <CloseIcon
+            onClick={() => dispatch(openModal())}
+            className={['close', props.modalType].join(' ')}
+          />
+          {props.modalType === 'contacts' ? <Contacts /> : <GalleryModal />}
         </div>
       </div>
     </>

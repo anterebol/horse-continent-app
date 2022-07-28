@@ -3,6 +3,7 @@ import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
 import { Preloader } from '../preloader/Preloader';
 import { loadPage, loadedPage } from '../../store/appReducer';
+import './main.css';
 import { useEffect } from 'react';
 export const FullPage = ({ children }: { children: JSX.Element }) => {
   const dispatch = useAppDispatch();
@@ -13,7 +14,7 @@ export const FullPage = ({ children }: { children: JSX.Element }) => {
   return (
     <>
       <Header />
-      {load ? <Preloader /> : children}
+      <div className="main">{load ? <Preloader /> : children}</div>
       <Footer />
     </>
   );

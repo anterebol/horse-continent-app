@@ -9,12 +9,10 @@ const currentImage = (number: number) => {
 const ckubName = 'КОННЫЙ КЛУБ КОННЫЙ КОНТИНЕНТ';
 export const MainSlider = () => {
   const [image, setImage] = useState(1);
-  const [changed, setChenged] = useState(true);
+  // const [changed, setChenged] = useState(true);
   const changeImage = (duration: string) => {
-    setChenged(false);
     if (duration === 'left') setImage(image !== 1 ? image - 1 : 4);
     else setImage(image !== 4 ? image + 1 : 1);
-    setChenged(true);
   };
   const changeBoxImage = (image: number) => setImage(image);
   return (

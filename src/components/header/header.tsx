@@ -8,7 +8,7 @@ import { Avatar } from '@mui/material';
 import './header.css';
 import { useState } from 'react';
 import { Modal } from '../modal/Modal';
-import { loadPage } from '../../store/appReducer';
+import { loadPage, chengeModal } from '../../store/appReducer';
 
 const headerLink = 'header-link';
 
@@ -20,6 +20,7 @@ type HoveredType = {
 
 export const Header = () => {
   const dispatch = useAppDispatch();
+  const { modalType } = useAppSelector((state) => state.appReducer);
   const [hovered, setHover] = useState({
     service: false,
     gallery: false,
@@ -41,14 +42,14 @@ export const Header = () => {
 
   return (
     <Box sx={headerCss}>
-      <Modal />
+      <Modal modalType={modalType} />
       <Box sx={boxHeaderInf}>
         <NavLink to={'/'} className="icon-horse">
           <Avatar src={horseImg} />
         </NavLink>
         <NavLink
           to={'/'}
-          className={headerLink}
+          className={[headerLink, 'gallery-link'].join(' ')}
           style={{ color: hoveredCls(hovered.main) ? hoveredCls(hovered.main) : 'black' }}
           onMouseEnter={() => mouseHovered('main')}
           onMouseLeave={() => mouseHovered('main')}
@@ -56,19 +57,15 @@ export const Header = () => {
         >
           Главная
         </NavLink>
-        <NavLink
-          to={''}
+        <p
           className={headerLink}
-          style={{ color: hoveredCls(hovered.contacts) ? hoveredCls(hovered.contacts) : 'black' }}
-          onMouseEnter={() => mouseHovered('contacts')}
-          onMouseLeave={() => mouseHovered('contacts')}
           onClick={() => {
+            dispatch(chengeModal({ modalType: 'contacts' }));
             dispatch(openModal());
           }}
-          // onClick={onLoad}
         >
           Контакты
-        </NavLink>
+        </p>
         <NavLink
           to={'/service'}
           className={headerLink}

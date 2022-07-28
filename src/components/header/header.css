@@ -1,16 +1,18 @@
 .header-link {
   margin: auto 0;
   text-decoration: none;
-};
-.header-link:active {
-  color: red;
+  font-size: 20px;
+  cursor: pointer;
 };
 .header-link:hover {
-  transform: scale(1.3);
+  color: orange;
+  cursor: pointer;
+  /* transform: scale(1.3); */
 };
-.hover {
-  color: red !important;
+.active {
+  transform: scale(1.3) !important;
 }
+
 
 .icon-horse:hover {
   transform: scale(1.3);

@@ -1,0 +1,5 @@
+.gallery {
+  padding: 0 30px;
+  padding-top: 70px;
+  background: -webkit-linear-gradient(top, rgb(239, 225, 200), white, rgb(234, 172, 59));
+}

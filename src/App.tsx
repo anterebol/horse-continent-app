@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { useAppDispatch, useAppSelector } from './hooks/hooks';
 import { Main } from './pages/Main/Main';
 import { FullPage } from './components/fullPage/fullPage';
 import { About } from './pages/About/About';

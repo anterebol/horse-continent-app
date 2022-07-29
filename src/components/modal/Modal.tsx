@@ -4,6 +4,22 @@ import './modal.css';
 import { Contacts } from '../contacts/contacts';
 import CloseIcon from '@mui/icons-material/Close';
 import { GalleryModal } from '../galleryModal/GalleryModal';
+import { Mail } from '../mail/Mail';
+import { Map } from '../map/Map';
+
+const checkModal = (type: string) => {
+  switch (type) {
+    case 'contacts':
+      return <Contacts />;
+    case 'mail':
+      return <Mail />;
+    case 'map':
+      <Map />;
+      return;
+    default:
+      return <GalleryModal />;
+  }
+};
 
 export const Modal = (props: { modalType: string }) => {
   const dispatch = useAppDispatch();
@@ -27,7 +43,7 @@ export const Modal = (props: { modalType: string }) => {
             onClick={() => dispatch(openModal())}
             className={['close', props.modalType].join(' ')}
           />
-          {props.modalType === 'contacts' ? <Contacts /> : <GalleryModal />}
+          {checkModal(props.modalType)}
         </div>
       </div>
     </>

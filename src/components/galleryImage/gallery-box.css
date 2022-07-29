@@ -9,14 +9,12 @@
   border-radius: 12px;
   cursor: pointer;
   background: rgb(83, 50, 7);
-  /* background: url(../../assets/ram.webp) no-repeat center; */
   transition: ease 1s;
   box-shadow: 5px 5px 5px black;
 }
 .gallery-box:hover {
   transform: scale(.8);
   box-shadow: 20px 20px 20px black;
-  /* box-shadow: 5px 5px 5px black; */
   transition: ease 1s;
 }
 .gallery-box-image {

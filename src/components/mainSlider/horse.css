@@ -11,7 +11,7 @@
   position: absolute;
   right: 130px;
   top: 150px;
-  font-family: 'Aleo', serif;
+  font-family: 'Courier New', Courier, monospace;
 }
 .horse1 {
   background: url('../../assets/horse/horse1.jpg') no-repeat;

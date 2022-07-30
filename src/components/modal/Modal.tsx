@@ -14,8 +14,7 @@ const checkModal = (type: string) => {
     case 'mail':
       return <Mail />;
     case 'map':
-      <Map />;
-      return;
+      return <Map place="modal-map" />;
     default:
       return <GalleryModal />;
   }
@@ -23,25 +22,26 @@ const checkModal = (type: string) => {
 
 export const Modal = (props: { modalType: string }) => {
   const dispatch = useAppDispatch();
+  const typeModal = props.modalType !== 'map' ? props.modalType : 'yandex';
   const { modal } = useAppSelector((state) => state.appReducer);
   return (
     <>
       <div className={['modal', modal ? 'open' : ''].join(' ')}></div>
       <div
         className={['modal-box', modal ? 'open' : ''].join(' ')}
-        onClick={(e) => {
+        onClick={() => {
           dispatch(openModal());
         }}
       >
         <div
-          className={['modal-body', modal ? 'open' : '', props.modalType].join(' ')}
+          className={['modal-body', modal ? 'open' : '', typeModal].join(' ')}
           onClick={(e) => {
             e.stopPropagation();
           }}
         >
           <CloseIcon
             onClick={() => dispatch(openModal())}
-            className={['close', props.modalType].join(' ')}
+            className={['close', typeModal].join(' ')}
           />
           {checkModal(props.modalType)}
         </div>

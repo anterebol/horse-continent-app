@@ -1,5 +1,25 @@
-#map { 
+.map { 
   width: 800px;
   height: 400px;
   margin: 0 auto;
+  position: relative;
+  /* background: url(../../assets/spinner.gif); */
+}
+.map-loader {
+  /* margin: 0 auto; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* display: block; */
+  visibility: visible;
+  overflow: visible;
+  opacity: 1;
+  position: absolute;
+  transition: ease 1.5s;
+}
+.map-loaded {
+  visibility: hidden;
+  overflow: hidden;
+  opacity: 0;
+  transition: ease 1.5s;
 }

@@ -9,9 +9,9 @@ export const headerCss = {
 };
 export const boxHeaderInf = {
   margin: '0px 30px',
-  'justify-content': 'space-between',
+  justifyContent: 'space-between',
   display: 'flex',
-  'flex-wrap': 'wrap',
+  flexWrap: 'wrap',
 };
 
 export const iconBox = {

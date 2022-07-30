@@ -1,18 +1,26 @@
 import './contacts.css';
-import { useAppDispatch } from '../../hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { chengeModal, openModal } from '../../store/appReducer';
+import mapImg from '../../assets/map.svg';
 
 export const Contacts = () => {
   const dispatch = useAppDispatch();
-  const openMail = () => {
-    dispatch(chengeModal({ modalType: 'mail' }));
+  const { modal } = useAppSelector((state) => state.appReducer);
+  const open = (type: string) => {
+    if (modal) {
+      dispatch(openModal());
+    }
+    dispatch(chengeModal({ modalType: type }));
     dispatch(openModal());
   };
   return (
     <div className="contacts">
       <ul className="contacts_links">
         <li className="messenger call_ico"></li>
-        <li className="messenger letters_ico" onClick={openMail}></li>
+        <li className="messenger letters_ico" onClick={() => open('mail')}></li>
+        <li className="messenger map_ico" onClick={() => open('map')}>
+          <img src={mapImg} />
+        </li>
         <li>
           <a href="https://www.instagram.com/k.klub.kontinent/">
             <div className="messenger instagram_ico"></div>

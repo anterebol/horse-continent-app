@@ -8,14 +8,14 @@
   opacity: 0;
   overflow: hidden;
   z-index: 99;
+  transition: var(overflow visibility opacity) ease .5s;
   visibility: hidden;
-  transition: ease .5s;
 }
 .modal.open {
   overflow: visible;
   opacity: .7;
   visibility: visible;
-  transition: ease 1s;
+  transition: var(overflow visibility opacity) ease .5s;
 }
 .modal-box {
   left: 0;
@@ -54,15 +54,19 @@
 }
 .modal-body.gallery-modal {
   max-width: 800px;
-  /* height: 400px; */
-  margin: 0 auto;
+  transition: none;
+}
+.modal-body.yandex {
+  max-width: 800px;
+  padding: 35px;
+  transition: var(overflow visibility opacity);
 }
 
 .modal-body.open {
   opacity: 1;
   overflow: visible;
   visibility: visible;
-  transition: ease 2s;
+  transition: var(overflow visibility opacity) ease 2s;
 }
 .close {
   position: absolute;

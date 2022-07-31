@@ -6,23 +6,27 @@ import CloseIcon from '@mui/icons-material/Close';
 import { GalleryModal } from '../galleryModal/GalleryModal';
 import { Mail } from '../mail/Mail';
 import { Map } from '../map/Map';
+import { ModalService } from '../modalService/modalService';
+import { MAIL, MAP, GALLERY, CONTACTS } from '../../constants/modalType';
 
 const checkModal = (type: string) => {
   switch (type) {
-    case 'contacts':
+    case CONTACTS:
       return <Contacts />;
-    case 'mail':
+    case MAIL:
       return <Mail />;
-    case 'map':
+    case MAP:
       return <Map place="modal-map" />;
-    default:
+    case GALLERY:
       return <GalleryModal />;
+    default:
+      return <ModalService />;
   }
 };
 
 export const Modal = (props: { modalType: string }) => {
   const dispatch = useAppDispatch();
-  const typeModal = props.modalType !== 'map' ? props.modalType : 'yandex';
+  const typeModal = props.modalType !== MAP ? props.modalType : 'yandex';
   const { modal } = useAppSelector((state) => state.appReducer);
   return (
     <>

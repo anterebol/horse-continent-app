@@ -39,11 +39,10 @@
   left: 50%;
   padding: 0;
   transform: translate(-50%, -50%);
-  /* margin: 0 auto; */
   width: 100%;
   border-radius: 10px;
   padding: 10px;
-  background: white !important;
+  background: white;
   overflow: hidden;
   visibility: hidden;
   z-index: 100;
@@ -66,7 +65,15 @@
   padding: 35px;
   transition: var(overflow visibility opacity);
 }
-
+.contest, .photo, .study, .rent {
+  max-width: 400px;
+  padding: 35px;
+  transition: var(overflow visibility opacity);
+}
+.close.rent, .close.photo, .close.study, .close.contest{
+  top: -20px;
+  right: -15px;
+}
 .modal-body.open {
   opacity: 1;
   overflow: visible;
@@ -82,10 +89,6 @@
   right: 10px;
   margin: 0 !important;
   /* width: 20px !important; */
-}
-.close.contacts {
-  /* top: 10;
-  right: 10; */
 }
 .close.gallery-modal {
   width: 24px;

@@ -9,6 +9,7 @@ import './header.css';
 import { useState } from 'react';
 import { Modal } from '../modal/Modal';
 import { loadPage, chengeModal } from '../../store/appReducer';
+import { CONTACTS } from '../../constants/modalType';
 
 const headerLink = 'header-link';
 
@@ -60,7 +61,7 @@ export const Header = () => {
         <p
           className={headerLink}
           onClick={() => {
-            dispatch(chengeModal({ modalType: 'contacts' }));
+            dispatch(chengeModal({ modalType: CONTACTS }));
             dispatch(openModal());
           }}
         >

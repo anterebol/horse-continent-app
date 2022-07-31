@@ -4,7 +4,7 @@ const initialState = {
   something: true,
   modal: false,
   load: true,
-  modalType: '',
+  modalType: 'contacts',
   image: 0,
 };
 

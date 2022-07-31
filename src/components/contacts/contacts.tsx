@@ -2,6 +2,7 @@ import './contacts.css';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { chengeModal, openModal } from '../../store/appReducer';
 import mapImg from '../../assets/map.svg';
+import { MAIL, MAP } from '../../constants/modalType';
 
 export const Contacts = () => {
   const dispatch = useAppDispatch();
@@ -17,8 +18,8 @@ export const Contacts = () => {
     <div className="contacts">
       <ul className="contacts_links">
         <li className="messenger call_ico"></li>
-        <li className="messenger letters_ico" onClick={() => open('mail')}></li>
-        <li className="messenger map_ico" onClick={() => open('map')}>
+        <li className="messenger letters_ico" onClick={() => open(MAIL)}></li>
+        <li className="messenger map_ico" onClick={() => open(MAP)}>
           <img src={mapImg} />
         </li>
         <li>

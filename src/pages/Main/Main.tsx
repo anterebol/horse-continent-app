@@ -1,7 +1,7 @@
 import { MainSlider } from '../../components/mainSlider/MainSlider';
 import { Contacts } from '../../components/contacts/contacts';
 import { Map } from '../../components/map/Map';
-import { MainInfo } from '../../components/mainInfo/mainInfo';
+import { Service } from '../../components/service/service';
 import { ImagesSlider } from '../../components/imagesSlider/ImagesSlider';
 import arrowDown from '../../assets/arrow-down.svg';
 import './main.css';
@@ -17,7 +17,7 @@ export const Main = () => {
           команда амбициозных творческих людей, сплочённых любовью и заботой к лошадям
         </p>
       </div>
-      <MainInfo />
+      <Service />
       <div className="short-info-box">
         <p className="team-text">
           если ты еще не с нами, посмотри фото наших счастливых клиентов...

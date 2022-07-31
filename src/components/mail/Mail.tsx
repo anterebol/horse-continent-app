@@ -1,6 +1,5 @@
 import './mail.css';
 import emailjs from '@emailjs/browser';
-import { useState } from 'react';
 
 export const Mail = () => {
   // const { sended, setSended } = useState(false);

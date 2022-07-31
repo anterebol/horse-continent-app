@@ -61,6 +61,11 @@
   padding: 35px;
   transition: var(overflow visibility opacity);
 }
+.modal-body.mail {
+  max-width: 400px;
+  padding: 35px;
+  transition: var(overflow visibility opacity);
+}
 
 .modal-body.open {
   opacity: 1;
@@ -93,9 +98,15 @@
   .modal-body.gallery-modal {
     max-width: 500px;
   }
+  .modal-body.yandex {
+    max-width: 600px;
+  }
 }
 @media (max-width: 600px) {
   .modal-body.contacts {
+    max-width: 400px;
+  }
+  .modal-body.yandex {
     max-width: 400px;
   }
   .modal-body.gallery-modal {

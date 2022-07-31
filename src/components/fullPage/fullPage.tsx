@@ -15,7 +15,7 @@ export const FullPage = ({ children }: { children: JSX.Element }) => {
     <>
       <Header />
       <div className="main">{load ? <Preloader /> : children}</div>
-      <Footer />
+      {load ? null : <Footer />}
     </>
   );
 };

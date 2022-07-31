@@ -1,9 +1,11 @@
 .map { 
-  width: 800px;
-  height: 400px;
+  /* width: 800px;
+  height: 400px; */
   margin: 0 auto;
   position: relative;
   /* background: url(../../assets/spinner.gif); */
+}
+.map-script {
 }
 .map-loader {
   /* margin: 0 auto; */
@@ -22,4 +24,7 @@
   overflow: hidden;
   opacity: 0;
   transition: ease 1.5s;
+}
+ymaps {
+  margin: 0 auto;
 }

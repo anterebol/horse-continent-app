@@ -35,7 +35,6 @@ const init = () => {
 export const Map = (props: { place: string }) => {
   useEffect(() => {
     const windowInnerWidth = window.innerWidth < 1000 ? (window.innerWidth < 600 ? 400 : 500) : 800;
-    // windowInnerWidth = props.place == 'modal-map' ?
     loadScript(
       `https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A49e065f9bf76e741dc86330fb6e38561758d26d500f68ee91072e28a1863d5e1&amp;width=${windowInnerWidth}&amp;height=400&amp;lang=ru_RU&amp;scroll=true&amp;apikey=da5c3ab2-544b-4a43-96b0-95f80246d1e5`,
       props.place,

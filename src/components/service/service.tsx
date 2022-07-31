@@ -1,6 +1,4 @@
 import './service.css';
-import { useAppDispatch } from '../../hooks/hooks';
-import { openModal, chengeModal } from '../../store/appReducer';
 import camera from '../../assets/services/camera.svg';
 import rent from '../../assets/services/rent.svg';
 import cup from '../../assets/services/cup.svg';

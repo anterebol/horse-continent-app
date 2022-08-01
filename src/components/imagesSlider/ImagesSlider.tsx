@@ -74,17 +74,11 @@ const thumbItems = (items: JSX.Element[], [setThumbIndex, setThumbAnimation]: [a
         | null
         | undefined,
       i: any
-    ) => (
-      <div className="thumb" onClick={() => (setThumbIndex(i), setThumbAnimation(true))}>
-        {item}
-      </div>
-    )
+    ) => <div className="thumb">{item}</div>
   );
 };
 
 export const ImagesSlider = () => {
-  const [mainIndex, setMainIndex] = useState(0);
-  const [mainAnimation, setMainAnimation] = useState(false);
   const [thumbIndex, setThumbIndex] = useState(0);
   const [thumbAnimation, setThumbAnimation] = useState(false);
   const [thumbs] = useState(thumbItems(items, [setThumbIndex, setThumbAnimation]));
@@ -126,9 +120,9 @@ export const ImagesSlider = () => {
             activeIndex={thumbIndex}
             disableButtonsControls
             items={thumbs}
-            mouseTracking={false}
+            // mouseTracking={false}
             onSlideChanged={syncThumbs}
-            touchTracking={!mainAnimation}
+            // touchTracking={false}
             infinite={true}
           />
         </div>

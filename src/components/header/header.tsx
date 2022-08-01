@@ -1,8 +1,6 @@
-import { headerCss, boxHeaderInf } from './headerCss';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { openModal } from '../../store/appReducer';
 import { NavLink } from 'react-router-dom';
-import { Box } from '@mui/system';
 import horseImg from '../../assets/horse.svg';
 import { Avatar } from '@mui/material';
 import './header.css';
@@ -42,15 +40,15 @@ export const Header = () => {
   const onLoad = () => dispatch(loadPage());
 
   return (
-    <Box sx={headerCss}>
+    <div className="header">
       <Modal modalType={modalType} />
-      <Box sx={boxHeaderInf}>
+      <div className="nav-box">
         <NavLink to={'/'} className="icon-horse">
           <Avatar src={horseImg} />
         </NavLink>
         <NavLink
           to={'/'}
-          className={[headerLink, 'gallery-link'].join(' ')}
+          className={[headerLink].join(' ')}
           style={{ color: hoveredCls(hovered.main) ? hoveredCls(hovered.main) : 'black' }}
           onMouseEnter={() => mouseHovered('main')}
           onMouseLeave={() => mouseHovered('main')}
@@ -97,7 +95,7 @@ export const Header = () => {
         >
           О нас
         </NavLink>
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 };

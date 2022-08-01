@@ -17,23 +17,20 @@ export const Contacts = () => {
   return (
     <div className="contacts">
       <ul className="contacts_links">
-        <li className="messenger call_ico"></li>
+        <a href="tel:+375295512947">
+          <li className="messenger call_ico"></li>
+        </a>
         <li className="messenger letters_ico" onClick={() => open(MAIL)}></li>
         <li className="messenger map_ico" onClick={() => open(MAP)}>
           <img src={mapImg} />
         </li>
         <li>
-          <a href="https://www.instagram.com/k.klub.kontinent/">
+          <a href="https://www.instagram.com/k.klub.kontinent/" target="_blank" rel="noreferrer">
             <div className="messenger instagram_ico"></div>
           </a>
         </li>
         <li>
-          <a href="https://www.facebook.com">
-            <div className="messenger facebook_ico"></div>
-          </a>
-        </li>
-        <li>
-          <a href="https://vk.com/k.klub.kontinent">
+          <a href="https://vk.com/k.klub.kontinent" target="_blank" rel="noreferrer">
             <div className="messenger vk_ico"></div>
           </a>
         </li>

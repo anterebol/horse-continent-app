@@ -1,0 +1,43 @@
+.modal-service {
+  text-align: center;
+}
+.first-modal-floor {
+  display: flex;
+  margin-bottom: 20px;
+}
+.modal-service-title {
+  color: rgb(11, 53, 83);
+  margin: auto auto;
+}
+.modal-service-question {
+  color: rgb(92, 135, 173);
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.modal-service-answer {
+  font-size: 25px;
+  margin-bottom: 15px;
+  color: rgb(224, 132, 46);
+}
+.modal-contakts-link {
+  width: 90px;
+  height: 60px;
+  margin: 0 auto;
+  text-align: center;
+  background: rgb(71, 155, 71);
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  transition: ease .5s;
+}
+.modal-contakts-link:hover {
+  transition: ease .5s;
+  box-shadow: 5px 5px 5px black;
+}
+.modal-contakts-link:active {
+  transform: scale(.9);
+  transition: ease .5s;
+  box-shadow: 7px 7px 7px black;
+}

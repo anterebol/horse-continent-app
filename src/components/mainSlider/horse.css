@@ -1,9 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Aleo:ital@1&display=swap');
 .box-image {
-  /* width: 100%; */
+  width: 100%;
   height: 300px;
-  /* justify-content: space-between; */
   position: relative;
+  background: black;
+}
+.main-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  visibility: visible;
+  opacity: 1;
+  transition: ease .5s;
+}
+.process {
+  visibility: hidden;
+  opacity: 0;
+  transition: ease .2s;
 }
 .club-title {
   color: white;
@@ -50,6 +63,15 @@
 .slider-box.active {
   background: orange;
 }
+.box-control {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 90px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 .arrow-main:hover {
   background: orange;
   transition: ease-in 1s;
@@ -66,6 +88,16 @@
     right: 60px;
   }
 }
+@media (max-width: 900px) and (min-width: 800px) {
+  .box-image {
+    height: 450px;
+  }
+}
+@media (max-width: 700px) and (min-width: 600px) {
+  .box-image {
+    height: 350px;
+  }
+}
 @media (max-width: 550px) {
   .club-title {
     font-size: 20px;
@@ -73,11 +105,17 @@
     top: 100px;
   }
 }
-@media (max-width: 1256px) and (min-width: 800px) {
+@media (max-width: 1256px) and (min-width: 900px) {
   .box-image {
     height: 550px;
   }
 }
+@media (min-width: 700px) and (max-width: 800px) {
+  .club-title {
+    right: 100px;
+    top: 80px;
+  }
+} 
 @media (min-width: 1256px) {
   .box-image {
     height: 720px;

@@ -13,3 +13,19 @@ body::-webkit-scrollbar-thumb {
   border-radius: 20px;       /* закругления плашки */
   border: 1px solid rgb(233, 212, 172);;  
 }
+textarea {
+  resize:none;
+  padding: 5px;
+}
+textarea::-webkit-scrollbar {
+  width: 6px;
+}
+textarea::-webkit-scrollbar-track {
+  background-color: rgb(245, 242, 237);  
+  border-radius: 10px;
+}
+textarea::-webkit-scrollbar-thumb {
+  background: -webkit-linear-gradient(top, rgb(78, 216, 240), rgb(43, 234, 247));
+  border-radius: 20px;       /* закругления плашки */
+  border: 1px solid rgb(233, 212, 172);;  
+}

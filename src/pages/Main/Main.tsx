@@ -7,8 +7,17 @@ import arrowDown from '../../assets/arrow-down.svg';
 import './main.css';
 import { FormReviews } from '../../components/formReviews/formReviews';
 import { Review } from '../../components/review/review';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import { getAllReviews } from '../../store/api/api';
+import { useEffect } from 'react';
 
 export const Main = () => {
+  const dispatch = useAppDispatch();
+  const { reviews } = useAppSelector((state) => state.apiReducer);
+  useEffect(() => {
+    dispatch(getAllReviews());
+    console.log(reviews);
+  }, []);
   return (
     <div className="main-box">
       <MainSlider />
@@ -32,13 +41,29 @@ export const Main = () => {
         <img className="arrow-down" src={arrowDown} alt="" />
       </div>
       {/* <Reviews /> */}
-      <Review
+      <FormReviews />
+      <div className="">
+        {reviews
+          .slice(-3)
+          .map((review) => {
+            return (
+              <Review
+                key={review.id}
+                name={review.name}
+                countStars={review.stars as number}
+                description={review.description}
+              />
+            );
+          })
+          .reverse()}
+      </div>
+      {/* <Review
         name="aleks"
         countStars={3}
         description={
           'Очень крутой сервис!ВВВВВВВВВВ ВВВВВВddddddddddd dddddddddВВВВВВВВ ВВВВВВВВ ВВВВВВВВВВВ ddddddddddddddddd dddddddddd  adssssssssss dsaaaaaaaaaa dassssssss dddddddddddddddddddddddddddsa     asssssssssssssssssss dsaaaaassssssss'
         }
-      />
+      /> */}
       <div className="short-info-box last-main">
         <h1>Наши контактные данные</h1>
         <div className="contact-data">

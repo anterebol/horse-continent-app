@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import appReducer from './appReducer';
+import apiReducer from './apiReducer';
 
 const rootReducer = combineReducers({
   appReducer,
+  apiReducer,
 });
 export const store = () =>
   configureStore({

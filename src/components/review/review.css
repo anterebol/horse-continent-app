@@ -41,18 +41,25 @@
   font-size: 15px;
   margin: 5px;
   overflow: hidden;
+  transition: ease 1s;
   /* overflow: hidden; */
   /* overflow: hidden; */
+}
+.review-description.full {
+  height: 200px;
+  transition: var(height) ease 2s;
 }
 .open-review {
   position: relative;
   left: 50%;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   transform: translateX(-50%);
   cursor: pointer;
-  background: url(../../assets/review/arrow-down.svg) no-repeat center;
+  transition: ease .3s;
 }
-.open-review:hover {
-  background: url(../../assets/review/arrow-down-orange.svg) no-repeat center;
-}
+/* .open-review:hover {
+  transition: ease .3s;
+  width: 30px;
+  height: 30px;
+} */

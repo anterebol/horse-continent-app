@@ -42,3 +42,47 @@
     padding-bottom: 0;
   }
 }
+.btn-review {
+  color: white;
+  width: 200px;
+  background: -webkit-linear-gradient(top, rgb(239, 156, 12), rgb(227, 196, 74));
+  padding: 8px;
+  border-radius: 13px;
+  border: none;
+  font-size: 15px;
+  display: block;
+  margin: 15px auto;
+  cursor: pointer;
+  box-shadow: 0 0 10px black;
+  position: relative;
+  left: 0;
+  transition: ease 3s;
+}
+@keyframes buttonHovered {
+  0%{
+    left: 0px;
+    /* transition: ease 1s; */
+  }
+  25% {
+    left: 10px;
+    /* transition: ease 1s; */
+  }
+  50% {
+    left: 0px;
+  }
+  75% {
+    left: -10px;
+    /* transition: ease 1s; */
+  }
+  100% {
+    left: 0px;
+  }
+}
+.btn-review:hover {
+  /* position: relative; */
+  animation: buttonHovered;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  background: -webkit-linear-gradient(top, rgb(39, 216, 45), rgb(81, 223, 112));
+}

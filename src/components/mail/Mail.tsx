@@ -15,7 +15,7 @@ export const Mail = () => {
   return (
     <div className="mail-body">
       <h2 className="mail-title">Напишите нам письмо</h2>
-      <form className="mail-form" onSubmit={sendEmail} autoComplete="off">
+      <form className="mail-form" onSubmit={(e) => sendEmail(e)} autoComplete="off">
         <div className="box-mail-input">
           <input className="input-mail name" placeholder="Имя" type="text" name="name" />
         </div>

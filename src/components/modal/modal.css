@@ -60,16 +60,16 @@
   padding: 35px;
   transition: var(overflow visibility opacity);
 }
-.modal-body.mail {
+.modal-body.mail, .modal-body.review-modal {
   background: -webkit-linear-gradient(top, rgb(9, 152, 241) 30%, rgb(100, 172, 192));
   max-width: 400px;
   padding: 35px;
   transition: var(overflow visibility opacity);
 }
-.modal-body.mail > svg {
+.modal-body.mail > svg, .modal-body.review-modal > svg {
   fill: white;
 }
-.modal-body.mail > svg:hover {
+.modal-body.mail > svg, .modal-body.review-modal > svg:hover {
   fill: orange;
 }
 .contest, .photo, .study, .rent {

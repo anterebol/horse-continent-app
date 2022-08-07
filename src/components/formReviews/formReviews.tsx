@@ -1,26 +1,64 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { addReview } from '../../store/api/api';
+import './formReview.css';
+import { addStars } from '../../utils/add-stars';
+import { choiseStars, openModal } from '../../store/appReducer';
+import { useState } from 'react';
+
 export const FormReviews = () => {
   const dispatch = useAppDispatch();
-  // const { addReview } = useAppSelector((state) => state.apiReducer);
+  const { choisesStars } = useAppSelector((state) => state.appReducer);
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const errors = { name: 'Введите имя', description: 'Оставьте комментарий' };
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const sendReview = (e: any) => {
+  const sendReview = async (e: any) => {
     e.preventDefault();
-    const req = { name: e.target[0].value, description: e.target[1].value };
-    console.log(req);
-    dispatch(addReview(req));
+    const req = { name, description, stars: choisesStars };
+    await dispatch(addReview(req));
+    e.target.reset();
+    dispatch(openModal());
+    dispatch(choiseStars(0));
   };
+
   return (
     <div className="review-body">
-      <h2 className="review-title">Напишите нам письмо</h2>
+      <h2 className="review-title">Мы ценим вас!</h2>
       <form className="review-form" onSubmit={sendReview} autoComplete="off">
         <div className="box-review-input">
-          <input className="input-review name" placeholder="Имя" type="text" name="name" />
+          <input
+            className="input-review name"
+            placeholder="Имя"
+            type="text"
+            name="name"
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          />
         </div>
+        <p className={['form-errors', name !== '' ? 'correct' : ''].join(' ')}>{errors.name}</p>
         <div className="box-review-input">
-          <textarea className="input-review messege" placeholder="Напишите отзыв" name="review" />
+          <textarea
+            className="input-review messege"
+            placeholder="Напишите отзыв"
+            name="description"
+            onChange={(e) => {
+              setDescription(e.target.value);
+            }}
+          />
         </div>
-        <button className="mail-button" type="submit">
+        <p className={['form-errors', description !== '' ? 'correct' : ''].join(' ')}>
+          {errors.description}
+        </p>
+        <div className="review-stars">{addStars(0, true)}</div>
+        <p className={['form-errors', choisesStars > 0 ? 'correct' : ''].join(' ')}>
+          Выберите количестов звезд для оценки
+        </p>
+        <button
+          className="review-button"
+          type="submit"
+          disabled={(choisesStars > 0 ? false : true) || description === '' || name === ''}
+        >
           Отправить
         </button>
       </form>

@@ -5,18 +5,18 @@ import { Service } from '../../components/service/service';
 import { ImagesSlider } from '../../components/imagesSlider/ImagesSlider';
 import arrowDown from '../../assets/arrow-down.svg';
 import './main.css';
-import { FormReviews } from '../../components/formReviews/formReviews';
+import { REVIEW } from '../../constants/modalType';
 import { Review } from '../../components/review/review';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { getAllReviews } from '../../store/api/api';
 import { useEffect } from 'react';
+import { chengeModal, openModal } from '../../store/appReducer';
 
 export const Main = () => {
   const dispatch = useAppDispatch();
   const { reviews } = useAppSelector((state) => state.apiReducer);
   useEffect(() => {
     dispatch(getAllReviews());
-    console.log(reviews);
   }, []);
   return (
     <div className="main-box">
@@ -31,17 +31,24 @@ export const Main = () => {
       <Service />
       <div className="short-info-box">
         <p className="team-text">
-          если ты еще не с нами, посмотри фото наших счастливых клиентов...
+          если вы еще не с нами, посмотрите фото наших счастливых клиентов...
         </p>
         <img className="arrow-down" src={arrowDown} alt="" />
       </div>
       <ImagesSlider />
       <div className="short-info-box">
-        <p className="team-text">или прочитай отзывы...</p>
+        <p className="team-text">Мы ценим каждого клиента, клиенты ценят нас...</p>
         <img className="arrow-down" src={arrowDown} alt="" />
       </div>
-      {/* <Reviews /> */}
-      <FormReviews />
+      <button
+        className="btn-review"
+        onClick={() => {
+          dispatch(chengeModal({ modalType: REVIEW }));
+          dispatch(openModal());
+        }}
+      >
+        Оставить отзыв
+      </button>
       <div className="">
         {reviews
           .slice(-3)
@@ -57,13 +64,15 @@ export const Main = () => {
           })
           .reverse()}
       </div>
-      {/* <Review
-        name="aleks"
-        countStars={3}
-        description={
-          'Очень крутой сервис!ВВВВВВВВВВ ВВВВВВddddddddddd dddddddddВВВВВВВВ ВВВВВВВВ ВВВВВВВВВВВ ddddddddddddddddd dddddddddd  adssssssssss dsaaaaaaaaaa dassssssss dddddddddddddddddddddddddddsa     asssssssssssssssssss dsaaaaassssssss'
-        }
-      /> */}
+      <button
+        className="btn-review"
+        onClick={() => {
+          dispatch(chengeModal({ modalType: REVIEW }));
+          dispatch(openModal());
+        }}
+      >
+        Посмотреть все отзывы
+      </button>
       <div className="short-info-box last-main">
         <h1>Наши контактные данные</h1>
         <div className="contact-data">

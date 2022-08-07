@@ -7,7 +7,8 @@ import { GalleryModal } from '../galleryModal/GalleryModal';
 import { Mail } from '../mail/Mail';
 import { Map } from '../map/Map';
 import { ModalService } from '../modalService/modalService';
-import { MAIL, MAP, GALLERY, CONTACTS } from '../../constants/modalType';
+import { MAIL, MAP, GALLERY, CONTACTS, REVIEW } from '../../constants/modalType';
+import { FormReviews } from '../formReviews/formReviews';
 
 const checkModal = (type: string) => {
   switch (type) {
@@ -19,6 +20,8 @@ const checkModal = (type: string) => {
       return <Map place="modal-map" />;
     case GALLERY:
       return <GalleryModal />;
+    case REVIEW:
+      return <FormReviews />;
     default:
       return <ModalService />;
   }

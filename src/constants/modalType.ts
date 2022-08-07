@@ -6,3 +6,4 @@ export const MAP = 'modal-map';
 export const MAIL = 'mail';
 export const GALLERY = 'gallery-modal';
 export const CONTACTS = 'contacts';
+export const REVIEW = 'review-modal';

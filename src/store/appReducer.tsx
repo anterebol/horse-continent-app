@@ -6,6 +6,8 @@ const initialState = {
   load: true,
   modalType: 'contacts',
   image: 0,
+  hoveredStars: 0,
+  choisesStars: 0,
 };
 
 const appSlice = createSlice({
@@ -28,7 +30,21 @@ const appSlice = createSlice({
       state.modalType = action.payload.modalType;
       state.image = action.payload.image;
     },
+    hovereStars: (state, action) => {
+      state.hoveredStars = action.payload;
+    },
+    choiseStars: (state, action) => {
+      state.choisesStars = action.payload;
+    },
   },
 });
 export default appSlice.reducer;
-export const { firstReducer, openModal, loadPage, loadedPage, chengeModal } = appSlice.actions;
+export const {
+  firstReducer,
+  openModal,
+  loadPage,
+  loadedPage,
+  chengeModal,
+  hovereStars,
+  choiseStars,
+} = appSlice.actions;

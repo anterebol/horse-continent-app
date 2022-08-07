@@ -63,17 +63,15 @@
     left: 0px;
     /* transition: ease 1s; */
   }
-  25% {
+  /* 25% {
     left: 10px;
-    /* transition: ease 1s; */
-  }
+  } */
   50% {
-    left: 0px;
+    left: 15px;
   }
-  75% {
+  /* 75% {
     left: -10px;
-    /* transition: ease 1s; */
-  }
+  } */
   100% {
     left: 0px;
   }

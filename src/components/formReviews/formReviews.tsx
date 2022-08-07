@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { addReview } from '../../store/api/api';
 import './formReview.css';
-import { addStars } from '../../utils/add-stars';
+import { addStars } from '../../utils/stars';
 import { choiseStars, openModal } from '../../store/appReducer';
 import { useState } from 'react';
 

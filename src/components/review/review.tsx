@@ -2,7 +2,7 @@ import user from '../../assets/review/user.svg';
 import down from '../../assets/review/arrow-down.svg';
 import './review.css';
 import { useState } from 'react';
-import { addStars } from '../../utils/add-stars';
+import { addStars } from '../../utils/stars';
 
 export const Review = (props: { name: string; countStars: number; description: string }) => {
   const [fullReview, setFullReview] = useState(false);

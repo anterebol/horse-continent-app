@@ -2,9 +2,7 @@ import './mail.css';
 import emailjs from '@emailjs/browser';
 
 export const Mail = () => {
-  // const { sended, setSended } = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const sendEmail = (e: any) => {
+  const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs.sendForm('service_p0v4ncj', 'template_87708dn', e.target, 'WyQ77dQwarhDLNzP9');

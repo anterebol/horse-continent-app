@@ -11,8 +11,7 @@ export const FormReviews = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const errors = { name: 'Введите имя', description: 'Оставьте комментарий' };
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const sendReview = async (e: any) => {
+  const sendReview = async (e) => {
     e.preventDefault();
     const req = { name, description, stars: choisesStars };
     await dispatch(addReview(req));
@@ -25,6 +24,7 @@ export const FormReviews = () => {
     <div className="review-body">
       <h2 className="review-title">Мы ценим вас!</h2>
       <form className="review-form" onSubmit={sendReview} autoComplete="off">
+        <p className={['form-errors', name !== '' ? 'correct' : ''].join(' ')}>{errors.name}</p>
         <div className="box-review-input">
           <input
             className="input-review name"
@@ -36,7 +36,9 @@ export const FormReviews = () => {
             }}
           />
         </div>
-        <p className={['form-errors', name !== '' ? 'correct' : ''].join(' ')}>{errors.name}</p>
+        <p className={['form-errors', description !== '' ? 'correct' : ''].join(' ')}>
+          {errors.description}
+        </p>
         <div className="box-review-input">
           <textarea
             className="input-review messege"
@@ -47,13 +49,10 @@ export const FormReviews = () => {
             }}
           />
         </div>
-        <p className={['form-errors', description !== '' ? 'correct' : ''].join(' ')}>
-          {errors.description}
-        </p>
-        <div className="review-stars">{addStars(0, true)}</div>
         <p className={['form-errors', choisesStars > 0 ? 'correct' : ''].join(' ')}>
           Выберите количестов звезд для оценки
         </p>
+        <div className="review-stars">{addStars(0, true)}</div>
         <button
           className="review-button"
           type="submit"

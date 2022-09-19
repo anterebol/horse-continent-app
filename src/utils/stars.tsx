@@ -2,7 +2,9 @@ import { Star } from '../components/star/star';
 export const addStars = (n: number, isFormStar = false) => {
   const stars = [];
   for (let i = 1; i <= 5; i++) {
-    stars.push(<Star isGold={i <= n && !isFormStar} position={i} isFormStar={isFormStar} />);
+    stars.push(
+      <Star key={i} isGold={i <= n && !isFormStar} position={i} isFormStar={isFormStar} />
+    );
   }
   return stars;
 };

@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { reviewUrl } from '../../constants/url';
+import { reviewUrl, eventUrl } from '../../constants/url';
 import { ReviewType } from '../../types/reviewType';
 import { POST, GET, PUT, DELETE } from '../../constants/methods';
 const headers = {
@@ -19,7 +19,7 @@ export const addReview = createAsyncThunk(
         if (!res.ok) {
           throw new Error(res.status.toString());
         } else {
-          return await res.text().then((res) => JSON.parse(res));
+          return await res.json();
         }
       });
       return data;
@@ -38,6 +38,24 @@ export const getAllReviews = createAsyncThunk('getAllReviews', async (_, { rejec
         throw new Error(res.status.toString());
       } else {
         return await res.text().then((res) => JSON.parse(res));
+      }
+    });
+    return data;
+  } catch (err) {
+    return rejectWithValue(err);
+  }
+});
+export const getAllEvents = createAsyncThunk('getAllEvents', async (_, { rejectWithValue }) => {
+  console.log('x');
+  try {
+    const data = await fetch(eventUrl, {
+      method: GET,
+      headers: headers,
+    }).then(async (res) => {
+      if (!res.ok) {
+        throw new Error(res.status.toString());
+      } else {
+        return res.json();
       }
     });
     return data;

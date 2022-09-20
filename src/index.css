@@ -2,6 +2,10 @@
   margin: 0;
   padding: 0;
 }
+body {
+  min-height: 100vh;
+  position: relative;
+}
 body::-webkit-scrollbar {
   width: 12px;               /* ширина scrollbar */
 }

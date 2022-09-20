@@ -46,7 +46,6 @@ export const getAllReviews = createAsyncThunk('getAllReviews', async (_, { rejec
   }
 });
 export const getAllEvents = createAsyncThunk('getAllEvents', async (_, { rejectWithValue }) => {
-  console.log('x');
   try {
     const data = await fetch(eventUrl, {
       method: GET,

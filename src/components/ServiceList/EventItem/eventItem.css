@@ -7,6 +7,18 @@
   border-radius: 10px;
   box-shadow: 3px 5px 10px black;
   padding: 10px;
+  border: none;
+  position: relative;
+}
+.event-over {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  /* background: linear-gradient(to right, white, 30%, rgb(127, 230, 230)); */
+  opacity: .3;
 }
 .event-img-box {
   height: 100%;
@@ -22,9 +34,26 @@
 }
 .event-main-info{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
 }
-@media (max-width: 900px) {
-  
+.event-text {
+  color: black;
+}
+.event-text.description {
+  margin-top: 10px;
+  overflow-y: scroll;
+}
+.event-text.description::-webkit-scrollbar {
+  width: 6px;               /* ширина scrollbar */
+}
+.event-text.description::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);        /* цвет дорожки */
+  border-radius: 10px;
+}
+.event-text.description::-webkit-scrollbar-thumb {
+  background-color: orange;    /* цвет плашки */
+  border-radius: 20px;       /* закругления плашки */
+  border: 1px solid rgb(233, 212, 172);;  
 }

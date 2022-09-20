@@ -2,6 +2,35 @@
   margin-top: 80px;
   text-align: center;
 }
+.controll-events {
+  width: 100%;
+  margin: 10px auto;
+  justify-content: center;
+  display: flex;
+}
+.controll-events__button {
+  background: linear-gradient(to right, rgb(26, 230, 16), 80%, rgb(26, 228, 161));
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin: 5px;
+  color: white;
+  transition: ease .5s;
+  cursor: pointer;
+}
+.controll-events__button:hover {
+  box-shadow: 3px 3px 10px black;
+  transition: ease .5s;
+}
+.controll-events__button:disabled {
+  background: gray;
+  box-shadow: none;
+  cursor: default;
+}
+.events-box {
+  text-align: center;
+  transition: ease 1s;
+}
 /* .service-title {
   margin-top: 30px;
 } */

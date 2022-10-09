@@ -2,6 +2,7 @@ import { EventType } from '../../../types/eventType';
 import cameraImg from '../../../assets/camera.svg';
 import { mounth } from '../../../constants/date';
 import './eventItem.css';
+import { arrFoto } from '../../../fotos/fotos';
 
 export const EventItem = (props: { event: EventType }) => {
   const { event } = props;
@@ -14,18 +15,24 @@ export const EventItem = (props: { event: EventType }) => {
     return correctDate;
   };
   return (
-    <li className="event-box">
-      <div className="event-over"></div>
-      <div className="event-img-box">
-        <img className="event-img" src={event.img || cameraImg} alt="event-img" />
-      </div>
-      <div className="event-info-box">
-        <div className="event-main-info">
-          <p className="event-text">{event.name}</p>
-          <p className="event-text">{addCorrectDate()}</p>
+    <>
+      <li className="event-box">
+        <div
+          className="event-over"
+          style={{
+            background: `url(${event.img}) no-repeat center`,
+            backgroundSize: 'cover',
+          }}
+        ></div>
+        <div className="event-info-box">
+          <h2 className="event-text">{event.name}</h2>
+          <p className="event-text description">{event.description}</p>
         </div>
-        <p className="event-text description">{event.description}</p>
-      </div>
-    </li>
+        <div className="event-main-info">
+          <p className="event-text">{addCorrectDate()}</p>
+          {/* <button className="event-btn">Детали...</button> */}
+        </div>
+      </li>
+    </>
   );
 };

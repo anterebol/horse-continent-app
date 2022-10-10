@@ -4,7 +4,7 @@ import { Main } from './pages/Main/Main';
 import { FullPage } from './components/fullPage/fullPage';
 import { About } from './pages/About/About';
 import { Gallery } from './pages/Gallery/Gallery';
-import { Service } from './pages/Services/Services';
+import { Services } from './pages/Services/Services';
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
         path="service"
         element={
           <FullPage>
-            <Service />
+            <Services />
           </FullPage>
         }
       ></Route>

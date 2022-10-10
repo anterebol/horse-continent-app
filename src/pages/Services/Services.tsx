@@ -4,7 +4,9 @@ import { getAllEvents } from '../../store/api/api';
 import { useEffect, useState } from 'react';
 import { EventList } from '../../components/ServiceList/EventList';
 import { EventType } from '../../types/eventType';
-export const Service = () => {
+import { Service } from '../../components/service/service';
+
+export const Services = () => {
   const { events } = useAppSelector((state) => state.apiReducer);
   const dispatch = useAppDispatch();
   const [eventTime, eventTimeSet] = useState('future');
@@ -22,7 +24,9 @@ export const Service = () => {
   return (
     <>
       <section className="service-box">
-        <h2 className="service-title">Услуги клуба</h2>
+        <Service />
+      </section>
+      <section className="events-box">
         <div className="controll-events">
           <button
             className="controll-events__button"
@@ -41,13 +45,11 @@ export const Service = () => {
             Прошедшие мероприятия
           </button>
         </div>
-      </section>
-      <section className="events-box">
         <h2 className="service-title">{isFuture() ? 'Будущие' : 'Прошедшие'} мероприятия</h2>
         {isFuture() ? (
-          <EventList events={events.filter((event) => wasEvent(event))} />
-        ) : (
           <EventList events={events.filter((event) => !wasEvent(event))} />
+        ) : (
+          <EventList events={events.filter((event) => wasEvent(event))} />
         )}
       </section>
     </>

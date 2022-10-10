@@ -1,16 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+/* font-family: 'Pangolin', cursive; */
 .service-box {
-  margin-top: 80px;
+  margin-top: 90px;
   text-align: center;
+}
+.events-box {
+  text-align: center;
+  transition: ease 1s;
+  /* background: rgb(37, 217, 205); */
+  padding-bottom: 20px;
+  position: relative;
+  /* top: -10px; */
 }
 .controll-events {
   width: 100%;
-  margin: 10px auto;
+  margin: 0px auto;
   justify-content: center;
   display: flex;
+  padding-bottom: 10px;
+  /* background: rgb(165, 213, 205); */
 }
 .controll-events__button {
-  background: linear-gradient(to right, rgb(26, 230, 16), 80%, rgb(26, 228, 161));
+  /* background: linear-gradient(to right, rgb(26, 230, 16), 80%, rgb(26, 228, 161)); */
   border: none;
+  background: orange;
   padding: 10px 15px;
   border-radius: 10px;
   margin: 5px;
@@ -27,9 +40,10 @@
   box-shadow: none;
   cursor: default;
 }
-.events-box {
-  text-align: center;
-  transition: ease 1s;
+.service-title {
+  color: rgb(198, 128, 52);
+  font-family: 'Pangolin', cursive;
+  margin: 10px auto;
 }
 /* .service-title {
   margin-top: 30px;

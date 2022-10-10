@@ -39,10 +39,11 @@ const checkServise = (modalType: string) => {
       return { icon: '', title: '', color: '', p: '' };
   }
 };
-export const ModalService = () => {
+export const ModalService = (props) => {
   const dispatch = useAppDispatch();
   const { modalType } = useAppSelector((state) => state.appReducer);
   const { icon, title, color, p } = checkServise(modalType);
+
   return (
     <div className="modal-service">
       <div className="first-modal-floor">

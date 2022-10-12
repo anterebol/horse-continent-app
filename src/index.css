@@ -6,6 +6,11 @@ body {
   min-height: 100vh;
   position: relative;
 }
+.app {
+  height: 100%;
+  position: relative;
+  bottom: 0;
+}
 body::-webkit-scrollbar {
   width: 12px;               /* ширина scrollbar */
 }

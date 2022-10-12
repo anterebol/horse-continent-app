@@ -2,13 +2,18 @@ import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
 import { Preloader } from '../preloader/Preloader';
-import { loadPage, loadedPage } from '../../store/appReducer';
+import { loadPage, loadedPage, openPageReview } from '../../store/appReducer';
 import './main.css';
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 export const FullPage = ({ children }: { children: JSX.Element }) => {
   const dispatch = useAppDispatch();
+  const { page } = useParams();
   const { load } = useAppSelector((state) => state.appReducer);
   useEffect(() => {
+    if (page) {
+      dispatch(openPageReview(page));
+    }
     if (load) setTimeout(() => dispatch(loadedPage()), 3000);
   }, [load]);
   return (

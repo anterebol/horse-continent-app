@@ -37,18 +37,9 @@ const appSlice = createSlice({
     choiseStars: (state, action) => {
       state.choisesStars = action.payload;
     },
-    openNextReviews: (state, action) => {
-      if (state.pageOfReviews < action.payload.maxPage) {
-        state.pageOfReviews++;
-      }
-    },
-    openPrevReviews: (state) => {
-      if (state.pageOfReviews > 2) {
-        state.pageOfReviews--;
-      }
-    },
-    openSpecificReviews: (state, action) => {
-      state.pageOfReviews = action.payload.page;
+    openPageReview: (state, action) => {
+      console.log('x', action);
+      state.pageOfReviews = action.payload;
     },
   },
 });
@@ -61,7 +52,5 @@ export const {
   chengeModal,
   hovereStars,
   choiseStars,
-  openNextReviews,
-  openPrevReviews,
-  openSpecificReviews,
+  openPageReview,
 } = appSlice.actions;

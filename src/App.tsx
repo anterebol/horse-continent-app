@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Main } from './pages/Main/Main';
 import { FullPage } from './components/fullPage/fullPage';
@@ -17,8 +17,9 @@ function App() {
           </FullPage>
         }
       />
+      <Route path="about-us" element={<Navigate to={'/about-us/1'} />} />
       <Route
-        path="about-us"
+        path="about-us/:page"
         element={
           <FullPage>
             <About />

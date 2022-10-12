@@ -1,7 +1,7 @@
 .footer {
   /* height: 100%; */
   max-height: 200px;
-  background: black;
+  background: linear-gradient(to bottom, white 1%, rgb(47, 46, 46) 10%);
   padding: 20px 0;
   position: absolute;
   bottom: 0;

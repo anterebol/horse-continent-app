@@ -14,6 +14,6 @@ const app = () => {
     </BrowserRouter>
   );
 };
-const root = ReactDOM.createRoot(document.getElementById('html') as HTMLElement);
+const root = ReactDOM.createRoot(document.getElementById('app') as HTMLElement);
 
 root.render(app());

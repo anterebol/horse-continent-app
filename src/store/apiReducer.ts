@@ -17,7 +17,7 @@ export const apiSlice = createSlice({
   extraReducers: {
     [addReview.fulfilled.type]: (state, action: { payload: ReviewType }) => {
       state.loadedBack = true;
-      state.reviews.push({ ...action.payload });
+      state.reviews.unshift({ ...action.payload });
     },
     [addReview.pending.type]: (state, action) => {
       state.loadedBack = false;

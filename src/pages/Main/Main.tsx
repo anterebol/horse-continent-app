@@ -11,13 +11,18 @@ import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { getAllReviews } from '../../store/api/api';
 import { useEffect } from 'react';
 import { chengeModal, openModal } from '../../store/appReducer';
+import { useNavigate } from 'react-router-dom';
 
 export const Main = () => {
   const dispatch = useAppDispatch();
   const { reviews } = useAppSelector((state) => state.apiReducer);
+  const { pageOfReviews } = useAppSelector((state) => state.appReducer);
+  const navigate = useNavigate();
+
   useEffect(() => {
     dispatch(getAllReviews());
   }, []);
+
   return (
     <div className="main-box">
       <MainSlider />
@@ -64,8 +69,7 @@ export const Main = () => {
       <button
         className="btn-review"
         onClick={() => {
-          dispatch(chengeModal({ modalType: REVIEW }));
-          dispatch(openModal());
+          navigate(`/about-us/${pageOfReviews}`);
         }}
       >
         Посмотреть все отзывы

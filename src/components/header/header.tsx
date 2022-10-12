@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { openModal } from '../../store/appReducer';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import horseImg from '../../assets/horse.svg';
 import { Avatar } from '@mui/material';
 import './header.css';
@@ -19,7 +19,8 @@ type HoveredType = {
 
 export const Header = () => {
   const dispatch = useAppDispatch();
-  const { modalType } = useAppSelector((state) => state.appReducer);
+  const { page } = useParams();
+  const { modalType, pageOfReviews } = useAppSelector((state) => state.appReducer);
   const [hovered, setHover] = useState({
     service: false,
     gallery: false,
@@ -86,7 +87,7 @@ export const Header = () => {
           Галерея
         </NavLink>
         <NavLink
-          to={'/about-us'}
+          to={`/about-us/${page || pageOfReviews}`}
           className={headerLink}
           style={{ color: hoveredCls(hovered.about) ? hoveredCls(hovered.about) : 'black' }}
           onMouseEnter={() => mouseHovered('about')}

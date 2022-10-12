@@ -8,6 +8,7 @@ const initialState = {
   image: 0,
   hoveredStars: 0,
   choisesStars: 0,
+  pageOfReviews: 1,
 };
 
 const appSlice = createSlice({
@@ -36,6 +37,19 @@ const appSlice = createSlice({
     choiseStars: (state, action) => {
       state.choisesStars = action.payload;
     },
+    openNextReviews: (state, action) => {
+      if (state.pageOfReviews < action.payload.maxPage) {
+        state.pageOfReviews++;
+      }
+    },
+    openPrevReviews: (state) => {
+      if (state.pageOfReviews > 2) {
+        state.pageOfReviews--;
+      }
+    },
+    openSpecificReviews: (state, action) => {
+      state.pageOfReviews = action.payload.page;
+    },
   },
 });
 export default appSlice.reducer;
@@ -47,4 +61,7 @@ export const {
   chengeModal,
   hovereStars,
   choiseStars,
+  openNextReviews,
+  openPrevReviews,
+  openSpecificReviews,
 } = appSlice.actions;

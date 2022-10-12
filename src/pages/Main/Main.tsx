@@ -50,19 +50,16 @@ export const Main = () => {
         Оставить отзыв
       </button>
       <div className="">
-        {reviews
-          .slice(-3)
-          .map((review) => {
-            return (
-              <Review
-                key={review.id}
-                name={review.name}
-                countStars={review.stars as number}
-                description={review.description}
-              />
-            );
-          })
-          .reverse()}
+        {reviews.slice(0, 3).map((review) => {
+          return (
+            <Review
+              key={review.id}
+              name={review.name}
+              countStars={review.stars as number}
+              description={review.description}
+            />
+          );
+        })}
       </div>
       <button
         className="btn-review"

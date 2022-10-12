@@ -25,6 +25,13 @@ export const Services = () => {
     <>
       <section className="service-box">
         <Service />
+        <div className="main-info-service">
+          <p>Основными услугами клуба является аренда лошади и обучение с опытным инструктором.</p>
+          <p>
+            Наш клуб периодически организовывает мероприятия, на которые мы приглашаем всех желающих
+            поучаствовать.
+          </p>
+        </div>
       </section>
       <section className="events-box">
         <div className="controll-events">

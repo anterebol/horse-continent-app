@@ -26,7 +26,7 @@ export const apiSlice = createSlice({
       console.log(action);
     },
     [getAllReviews.fulfilled.type]: (state, action: { payload: ReviewType[] }) => {
-      state.reviews = [...action.payload];
+      state.reviews = [...action.payload].reverse();
       state.loadedBack = true;
     },
     [getAllReviews.pending.type]: (state) => {

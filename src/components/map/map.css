@@ -1,12 +1,16 @@
 .map { 
   /* width: 800px;
   height: 400px; */
+  min-height: 200px;
   margin: 0 auto;
   position: relative;
+  transition: ease 1s;
   /* background: url(../../assets/spinner.gif); */
 }
-.map-script {
+.main-map {
+  margin-bottom: 50px;
 }
+
 .map-loader {
   /* margin: 0 auto; */
   top: 50%;
@@ -18,6 +22,7 @@
   opacity: 1;
   position: absolute;
   transition: ease 1.5s;
+  /* margin-bottom: 50px; */
 }
 .map-loaded {
   visibility: hidden;

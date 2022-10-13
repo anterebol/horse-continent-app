@@ -66,14 +66,16 @@ export const Main = () => {
           );
         })}
       </div>
-      <button
-        className="btn-review"
-        onClick={() => {
-          navigate(`/about-us/${pageOfReviews}`);
-        }}
-      >
-        Посмотреть все отзывы
-      </button>
+      <a className="link-review" href="#reviews">
+        <button
+          className="btn-review"
+          onClick={() => {
+            navigate(`/about-us/${pageOfReviews}`);
+          }}
+        >
+          Посмотреть все отзывы
+        </button>
+      </a>
       <div className="short-info-box last-main">
         <h1>Наши контактные данные</h1>
         <div className="contact-data">

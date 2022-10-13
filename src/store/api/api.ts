@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { reviewUrl, eventUrl } from '../../constants/url';
 import { ReviewType } from '../../types/reviewType';
-import { POST, GET, PUT, DELETE } from '../../constants/methods';
+import { POST, GET } from '../../constants/methods';
 const headers = {
   accept: 'application/json',
   'content-type': 'application/json',

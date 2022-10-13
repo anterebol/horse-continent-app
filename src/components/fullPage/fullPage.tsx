@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
 import { Preloader } from '../preloader/Preloader';
-import { loadPage, loadedPage, openPageReview } from '../../store/appReducer';
+import { loadedPage, openPageReview } from '../../store/appReducer';
 import './main.css';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';

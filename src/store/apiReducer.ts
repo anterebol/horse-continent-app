@@ -19,7 +19,7 @@ export const apiSlice = createSlice({
       state.loadedBack = true;
       state.reviews.unshift({ ...action.payload });
     },
-    [addReview.pending.type]: (state, action) => {
+    [addReview.pending.type]: (state) => {
       state.loadedBack = false;
     },
     [addReview.rejected.type]: (state, action) => {
@@ -33,7 +33,6 @@ export const apiSlice = createSlice({
       state.loadedBack = false;
     },
     [getAllEvents.fulfilled.type]: (state, action: { payload: EventType[] }) => {
-      console.log(action.payload);
       state.events = [...action.payload];
       state.loadedBack = true;
     },

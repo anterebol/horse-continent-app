@@ -1,7 +1,7 @@
 import { GalleryImage } from '../galleryImage/GalleryImage';
 import './gallery-list.css';
 import { arrFoto } from '../../fotos/fotos';
-const d = () => {
+const addArr = () => {
   const arr = new Array(arrFoto.length).fill('');
   return arr;
 };
@@ -9,7 +9,7 @@ const d = () => {
 export const GalleryList = () => {
   return (
     <ul className="gallery-list">
-      {d().map((_, index) => {
+      {addArr().map((_, index) => {
         return <GalleryImage key={index} number={index} />;
       })}
     </ul>

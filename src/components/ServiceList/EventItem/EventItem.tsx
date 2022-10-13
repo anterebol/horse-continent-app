@@ -2,10 +2,8 @@ import { EventType } from '../../../types/eventType';
 import cameraImg from '../../../assets/camera.svg';
 import { mounth } from '../../../constants/date';
 import './eventItem.css';
-import { arrFoto } from '../../../fotos/fotos';
 import { useEffect, useState } from 'react';
 import spinner from '../../../assets/spinner.gif';
-import { JsxElement } from 'typescript';
 
 export const EventItem = (props: { event: EventType }) => {
   const { event } = props;

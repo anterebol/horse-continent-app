@@ -35,11 +35,13 @@ export const MainSlider = () => {
 
   return (
     <div className="box-image">
-      <img
-        className={['main-img', process ? 'process' : ''].join(' ')}
-        src={mainImgs[image]}
-        alt=""
-      />
+      {/* <div className="box-image">
+        <img
+          className={['main-img', process ? 'process' : ''].join(' ')}
+          src={mainImgs[image]}
+          alt=""
+        />
+      </div> */}
       <h1 className="club-title">{ckubName}</h1>
       <div className="box-control">
         <img src={arrowLeft} className="arrow-main" onClick={() => changeImage('left')} />

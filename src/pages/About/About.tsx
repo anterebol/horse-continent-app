@@ -58,7 +58,9 @@ export const About = () => {
   return (
     <div className="about">
       <section className="review-section">
-        <h2 className="review-section-title">Отзывы</h2>
+        <h2 className="review-section-title" id="reviews">
+          Отзывы
+        </h2>
         {reviews
           .filter((review, index) => {
             if (index >= (page - 1) * 7 && index < page * 7 && review.visible) {
